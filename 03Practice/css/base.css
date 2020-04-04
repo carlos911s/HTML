@@ -1,0 +1,437 @@
+*{
+    padding:0px;
+    margin: 0px;
+
+}
+
+/*顶部导航栏部分*/
+.top_nav{
+    width:100%;
+    height:30px;
+    background-color: #333333;
+
+}
+
+.top_nav>.nav_center{
+    width:1200px;
+    height:30px;
+    margin:auto;
+}
+
+.top_nav>.nav_center>div{
+    width:50%;
+    height:30px;
+    float:left; /*负责左右两边横排*/
+}
+
+.top_nav>.nav_center>div>a{
+    height:30px;
+    display:block;
+    text-decoration: none;
+    font-size:14px;
+    color:#eee;
+    line-height:30px;
+    box-sizing:border-box;
+}
+
+.top_nav>.nav_center>.left>a{
+    float:left; /*负责a标签横排*/
+    margin-right:15px; /*为什么要设置右边的？*/
+}
+
+.top_nav>.nav_center>.right>a{
+    float:left;
+    margin-left:15px;
+}
+
+.top_nav>.nav_center>div>a:hover{
+    font-weight:bold;
+    color:#188eee;
+    border-bottom:3px #188eee solid
+}
+
+.top_nav::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*标题栏部分*/
+.header{
+    width:1200px;
+    height:90px;
+    margin:auto;
+    background-color: white;
+}
+.header>div{
+    width:50%;
+    height:80px;
+    float:left;
+    box-sizing:border-box;
+    position: relative;
+}
+.header>.logo>img:nth-child(1){
+    padding-top:17px;
+    margin-right: 20px;
+}
+
+.header>.search>form>input[type=text]{
+    width:350px;
+    position:absolute;
+    right:0px;
+    top:35px;
+    box-sizing:border-box;
+    border:2px solid #ccc;
+    border-radius:4px;
+    font-size:14px;
+    background-color: white;
+    background-image: url('https://static.runoob.com/images/mix/searchicon.png');
+    background-position: 10px 10px; /*搜索图片相对左上角位置*/
+    background-repeat: no-repeat;
+    padding:8px 20px 8px 40px;
+
+}
+.header::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*导航栏部分*/
+.nav{
+    width:1200px;
+    height:40px;
+    background-color: white;
+    margin:auto;
+}
+.nav>div{
+    float:left;
+}
+.nav>.left{
+    width:200px;
+    height:40px;
+    background-color :#188eee;
+    position:relative;
+    box-sizing:border-box;
+    padding:7px 0 0 70px;
+    font-size:18px;
+    color:white;
+}
+.nav>.left>img{
+    position:absolute;
+    left:40px;
+    top:10px;
+}
+.nav>.right{
+    height:40px;
+    padding-left:20px;
+}
+.nav>.right>a{
+    text-decoration:none;
+    display:inline;
+    margin:18px;
+    font-size:13px;
+    line-height:40px;
+    color:#111;
+    
+}
+.nav>.right>a:hover{
+    color:#188eee;
+    font-weight:700;
+}
+
+.nav::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*大图部分*/ 
+.big_img{
+    width:100%;
+    height:340px;
+    background-color:#C3C864
+}
+.big_img>.img_center{
+    width:1200px;
+    height:340px;
+    margin:auto;
+    position:relative;
+}
+
+.big_img>.img_center>.course_type{
+    width:200px;
+    height:340px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(0,0,0,0.7);
+}
+.big_img>.img_center>.course_type>.item{
+    width:200px;
+    height:68px;
+    padding:5px;
+    box-sizing: border-box;
+}
+
+.big_img a{
+    color:white;
+    text-decoration: none;
+}
+.big_img h5 a{
+    display:inline;
+    margin-right: 5px;
+    font-size: 14px;
+    line-height: 35px;
+}
+.big_img p a{
+    display:inline; /*不能设置宽高*/
+    font-size:13px;
+    margin-right: 5px;
+    line-height: 15px;
+}
+
+.big_img>.img_center>.course_type>.item:hover{
+    background-color: navy;
+}
+.big_img a:hover{
+    color: #188eee;
+}
+
+/*大图部分---新闻栏*/
+.big_img>.img_center>.news{
+    width:240px;
+    height:280px;
+    background-color: #161B29;
+    position: absolute;
+    right:0px;
+    top:30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding:15px;
+}
+.big_img>.img_center>.news h3{
+    color:#188eee;
+}
+.big_img>.img_center>.news hr{
+    margin:10px 0px;
+}
+.big_img>.img_center>.news li{
+    color:#eee;
+    list-style-position: inside;
+}
+.big_img>.img_center>.news a{
+    text-decoration: none;
+    color:#eee;
+    font-size:14px;
+    line-height:22px;
+}
+.big_img>.img_center>.news li:hover{
+    color:#188eee;
+}
+.big_img>.img_center>.news a:hover{
+    color:#188eee;
+}
+
+/*内容标题*/
+
+.content_header{
+    width:1200px;
+    /*height:46px;*/
+    height:60px;
+    margin:auto;
+
+}
+.content_header>div{
+    width: 1200px;
+    height: 46px;
+    margin-bottom: 5px;
+}
+.content_header>div>div{
+    float:left;
+    width:50%;
+    height:46px;
+}
+.content_header>div>.left>*{
+    float:left;
+}
+.content_header>div>.left>h2{
+    line-height:46px;
+    letter-spacing:5px;
+}
+.content_header>div>.left>img{
+    margin-right:30px;
+}
+.content_header>div>.right>a{
+    display:block;
+    float:right;
+    line-height: 46px;
+    margin-left:20px;
+    text-decoration: none;
+    font-size:14px;
+    color:#111;
+    font-weight:bold;
+}
+.content_header>div>.right>a:hover{
+    color:#188eee;
+}
+
+/*
+.content01{
+    width:1200px;
+    height:100px;
+    margin:auto;
+    background-color:beige;
+}
+*/
+
+/*内容区域--畅销好课*/
+.content{
+    width:1200px;
+    height:230px;
+    margin:20px auto;
+}
+.content>.course{
+    width:285px;
+    height:230px;
+    float:left;
+    margin-right:20px;
+    box-sizing: border-box;
+}
+.content>.course:last-child{
+    margin-right:0px;
+}
+.content>.course>img{
+    width:285px;
+    height:150px;
+    display:block;/*处理不贴边问题*/
+}
+.content>.course>div{
+    width:285px;
+    height:80px;
+    background-color: #f5f5f5;
+    padding:5px 10px;
+    box-sizing:border-box;
+}
+.content>.course>div>h5{
+    line-height: 20px;
+    font-size:15px;
+}
+.content>.course li{
+    list-style-type:none;
+    font-size:14px;
+    margin-right:15px;
+}
+.content>.course>div>.middle>li{
+    display:inline;
+    
+}
+.content>.course>div>.middle>li:first-child::before{
+    content:"作者：";
+}
+.content>.course>div>.middle>li:last-child::after{
+    content:"人好评";
+}
+.content>.course>div>.price>li{
+    display:inline;
+}
+.content>.course>div>.price>li:first-child{
+    text-decoration:line-through;
+}
+.content>.course>div>.price>li:first-child::before{
+    content:"原价：";
+}
+.content>.course>div>.price>li:last-child{
+    color:red;
+}
+.content>.course>div>.price>li:last-child::before{
+    content:"优惠价:￥"
+}
+.content>.course>div>h5:hover{
+    color:#188eee;
+}
+.content>.course:hover{
+    box-shadow: 0px 0px 1px 2px navy;
+}
+
+/*内容区域-- 学生必读*/
+.content_reader{
+    width:1200px;
+    height:340px;
+    margin:auto;
+}
+.content_reader>.item{
+    width:390px;
+    height:340px;
+    background-color: lightblue;
+    margin-right: 15px;
+    float:left;
+    box-sizing: border-box;
+    padding:20px;
+}
+.content_reader>.item:last-child{
+    margin-right: 0px;
+}
+.content_reader>.item li{
+    list-style: inside;
+    
+}
+.content_reader>.item h2{
+    line-height: 40px;
+}
+.content_reader hr{
+    margin:10px 0px;
+}
+
+.content_reader>.item a{
+    text-decoration: none;
+    color:navy;
+    line-height: 35px;
+}
+.content_reader>.item a:hover{
+    color:red;
+    font-weight:bold;
+}
+
+/*页脚部分*/
+.footer{
+    width:100%;
+    height:230px;
+    background-color: #333;
+}
+.footer>div{
+    width:1200px;
+    height:230px;
+    margin:auto;
+}
+.footer>div>div{
+    width:200px;
+    height:230px;
+    float:left;
+    box-sizing: border-box;
+    padding:20px;
+}
+
+.footer>div>div h3{
+    line-height: 50px;
+    color:white;
+}
+.footer>div>div a{
+    display:block;
+    text-decoration: none;
+    color:#eee;
+    line-height: 25px;
+}
+.footer>div>div:nth-child(5){
+    color:white;
+    box-sizing: border-box;
+    padding-top: 80px;
+}
+.footer>div>div:nth-child(6){
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+.footer>div>div a:hover{
+    color:#188eee;
+}
+
