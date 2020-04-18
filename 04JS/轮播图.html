@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 1200px;
+            height: 535px;
+            margin: 50px auto;
+            position: relative;
+
+        }
+
+        #container>#images {
+            width: 1200px;
+            height: 535px;
+        }
+
+        #container>#images>img {
+            width: 1200px;
+            height: 535px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: none;
+        }
+
+        #container>#points {
+            width: 190px;
+            height: 15px;
+
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            /*非常重要 */
+
+        }
+
+        #container>#points>div {
+            width: 15px;
+            height: 15px;
+            background-color: #ddd;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+
+
+        }
+
+        #container>#points>div:last-child {
+            margin-right: 0px;
+        }
+
+        /* 以下重点掌握图片的切割 */
+        #container>#previous {
+            width: 40px;
+            height: 62px;
+            background-image: url("images/arrow.png");
+            background-position: 0px 0px;
+            position: absolute;
+            top: 220px;
+            left: 10px;
+        }
+
+        #container>#next {
+            width: 40px;
+            height: 62px;
+            background-image: url("images/arrow.png");
+            background-position: -40px 0px;
+            position: absolute;
+            top: 220px;
+            right: 10px;
+        }
+
+        #container>#previous:hover {
+            background-image: url("images/arrow.png");
+            background-position: 0px -62px;
+        }
+
+        #container>#next:hover {
+            background-image: url("images/arrow.png");
+            background-position: -40px -62px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var images = document.getElementById("images").getElementsByTagName("img");
+
+            var points = document.getElementById("points").getElementsByTagName("div");
+            console.log(points);
+
+            var previous = document.getElementById("previous");
+            var next = document.getElementById("next");
+            var container = document.getElementById("container");
+            var now = 0;
+            var time = null;
+
+            //点击右箭头事件
+            next.onclick = function () {
+                now++;
+                if (now == images.length) {
+                    now = 0;
+                }
+                display();
+            }
+            //点击左箭头事件
+            previous.onclick = function () {
+                now--
+                if (now == -1) {
+                    now = images.length - 1;
+                }
+                display();
+            }
+            //鼠标放置在图片上，停止播放
+            container.onmouseover = function () {
+                clearInterval(time);
+            }
+            //鼠标移出图片，继续播放
+            container.onmouseout = function () {
+                time = setInterval("next.onclick()", 2000)
+            }
+
+            //鼠标放置在某一个圆点上，切换响应的背景图
+            for (let i = 0; i < points.length; i++) {
+                points[i].index=i;
+                points[i].onmouseover=function(){
+                    if(now==this.index) return;
+                    now=this.index;
+                    display();
+                }
+            }
+
+            //不允许直接调用，需通过事件的方式调用。
+            //setInterval("display()",2000)
+            time = setInterval("next.onclick()", 2000)
+
+            //展示摸一个索引号的背景图片和点
+            function display() {
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.display = "none";
+                    points[i].style.backgroundColor = "#ddd";
+
+                }
+                images[now].style.display = "block";
+                points[now].style.backgroundColor = "#A10000";
+                //now++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="images">
+            <img src="images/1.jpg" alt="" style="display:block">
+            <img src="images/2.jpg" alt="">
+            <img src="images/3.jpg" alt="">
+            <img src="images/4.jpg" alt="">
+            <img src="images/5.jpg" alt="">
+            <img src="images/6.jpg" alt="">
+            <img src="images/7.jpg" alt="">
+            <img src="images/8.jpg" alt="">
+        </div>
+        <div id="previous">
+
+        </div>
+        <div id="next">
+
+        </div>
+        <div id="points">
+            <div style="background-color: #A10000; " ></div>
+            <div ></div>
+            <div ></div>
+            <div ></div>
+            <div ></div>
+            <div ></div>
+            <div ></div>
+            <div ></div>
+        </div>
+    </div>
+</body>
+
+</html>
